@@ -28,9 +28,10 @@ class InventorySystem:
         return value
 
     def search_products(self, keyword: str):
+        keyword = keyword.lower()
         keyword_results = []
         for item in self.inventory[product_id].values():
-            if keyword in item["name"]:
+            if keyword in item["name"].lower():
                 keyword_results.append(item)
         return keyword_results
 
